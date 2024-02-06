@@ -122,7 +122,9 @@ class _TasbehScreenState extends State<TasbehScreen> {
       counter = 0;
       for (int i = 0; i < azkarList.length; i++) {
         text = azkarList[i];
+          setState(() {});
       }
     }
+    });
   }
 }
