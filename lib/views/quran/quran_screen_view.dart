@@ -129,11 +129,9 @@ class QuranScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Size mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
     var vm = Provider.of<SettingsProvider>(context);
-
 
     return Column(
       children: [
@@ -141,13 +139,15 @@ class QuranScreen extends StatelessWidget {
           'assets/images/mushaf.png',
           height: mediaQuery.height * .2,
         ),
-         Divider(
-          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+        Divider(
+          color: vm.currentThemeMode == ThemeMode.light
+              ? kPrimaryColorLightTheme
+              : kSecondColorDarkTheme,
           thickness: 2,
         ),
         Row(
           children: [
-             Expanded(
+            Expanded(
               child: Text(
                 'رقم السورة',
                 textAlign: TextAlign.center,
@@ -157,9 +157,11 @@ class QuranScreen extends StatelessWidget {
             Container(
               height: 35,
               width: 2,
-              color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? kPrimaryColorLightTheme
+                  : kSecondColorDarkTheme,
             ),
-             Expanded(
+            Expanded(
               child: Text(
                 'اسم السورة',
                 textAlign: TextAlign.center,
@@ -168,8 +170,10 @@ class QuranScreen extends StatelessWidget {
             ),
           ],
         ),
-         Divider(
-          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+        Divider(
+          color: vm.currentThemeMode == ThemeMode.light
+              ? kPrimaryColorLightTheme
+              : kSecondColorDarkTheme,
           thickness: 2,
         ),
         Expanded(

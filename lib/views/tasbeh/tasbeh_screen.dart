@@ -45,15 +45,19 @@ class _TasbehScreenState extends State<TasbehScreen> {
                   child: Transform.rotate(
                     angle: _rotationAngle * (3.1415926535 / 180),
                     child: Image.asset(
-                      vm.currentThemeMode == ThemeMode.light ? 'assets/images/body of seb7a.png' : 'assets/images/body of seb7a dark(1).png',
-
+                      vm.currentThemeMode == ThemeMode.light
+                          ? 'assets/images/body of seb7a.png'
+                          : 'assets/images/body of seb7a dark(1).png',
                     ),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 30.0),
-                child: Image.asset(        vm.currentThemeMode == ThemeMode.light ? 'assets/images/head of seb7a.png' : 'assets/images/head of seb7a dark(1).png',
+                child: Image.asset(
+                  vm.currentThemeMode == ThemeMode.light
+                      ? 'assets/images/head of seb7a.png'
+                      : 'assets/images/head of seb7a dark(1).png',
                 ),
               ),
             ],
@@ -76,7 +80,9 @@ class _TasbehScreenState extends State<TasbehScreen> {
             height: 81,
             width: 69,
             decoration: BoxDecoration(
-              color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kPrimaryColorDarkTheme,
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? kPrimaryColorLightTheme
+                  : kPrimaryColorDarkTheme,
               borderRadius: BorderRadius.circular(25),
             ),
             child: Align(
@@ -99,15 +105,17 @@ class _TasbehScreenState extends State<TasbehScreen> {
             height: 51,
             width: 137,
             decoration: BoxDecoration(
-              color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? kPrimaryColorLightTheme
+                  : kSecondColorDarkTheme,
               borderRadius: BorderRadius.circular(25),
             ),
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: vm.currentThemeMode ==ThemeMode.light ?const TextStyle(color: Colors.white) :const TextStyle(color: Colors.black)
-              ),
-            ),
+            child: Text(text,
+                textAlign: TextAlign.center,
+                style: vm.currentThemeMode == ThemeMode.light
+                    ? const TextStyle(color: Colors.white)
+                    : const TextStyle(color: Colors.black)),
+          ),
         ],
       ),
     );

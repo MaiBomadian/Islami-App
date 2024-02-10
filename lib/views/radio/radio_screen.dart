@@ -31,23 +31,28 @@ class RadioScreen extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-         Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.skip_previous,
-              color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? kPrimaryColorLightTheme
+                  : kSecondColorDarkTheme,
               size: 50,
-
             ),
             Icon(
               Icons.play_arrow,
-              color:  vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? kPrimaryColorLightTheme
+                  : kSecondColorDarkTheme,
               size: 50,
             ),
             Icon(
               Icons.skip_next,
-              color:  vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? kPrimaryColorLightTheme
+                  : kSecondColorDarkTheme,
               size: 50,
             ),
           ],

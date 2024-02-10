@@ -36,9 +36,12 @@ class SettingsScreen extends StatelessWidget {
           ),
           CustomDropdown<String>(
             decoration: CustomDropdownDecoration(
-                closedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white,
-                expandedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white
-            ),
+                closedFillColor: vm.currentThemeMode == ThemeMode.dark
+                    ? kPrimaryColorDarkTheme
+                    : Colors.white,
+                expandedFillColor: vm.currentThemeMode == ThemeMode.dark
+                    ? kPrimaryColorDarkTheme
+                    : Colors.white),
             initialItem: vm.currentLanguage == 'en' ? 'English' : 'عربي',
             items: languages,
             onChanged: (value) {
@@ -61,18 +64,20 @@ class SettingsScreen extends StatelessWidget {
           ),
           CustomDropdown<String>(
             decoration: CustomDropdownDecoration(
-                closedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white,
-                expandedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white
-            ),
-            initialItem: vm.currentThemeMode == ThemeMode.light? 'Light': 'Dark',
+                closedFillColor: vm.currentThemeMode == ThemeMode.dark
+                    ? kPrimaryColorDarkTheme
+                    : Colors.white,
+                expandedFillColor: vm.currentThemeMode == ThemeMode.dark
+                    ? kPrimaryColorDarkTheme
+                    : Colors.white),
+            initialItem:
+                vm.currentThemeMode == ThemeMode.light ? 'Light' : 'Dark',
             items: themeLits,
             onChanged: (value) {
-              if(value == 'Light'){
+              if (value == 'Light') {
                 vm.changeTheme(ThemeMode.light);
-              }
-              else if (value == 'Dark'){
+              } else if (value == 'Dark') {
                 vm.changeTheme(ThemeMode.dark);
-
               }
             },
           )

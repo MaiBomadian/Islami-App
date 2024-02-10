@@ -16,7 +16,7 @@ class QuranListTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var vm= Provider.of<SettingsProvider>(context);
+    var vm = Provider.of<SettingsProvider>(context);
     return Row(
       children: [
         Expanded(
@@ -29,7 +29,9 @@ class QuranListTitle extends StatelessWidget {
         Container(
           height: 45,
           width: 2,
-          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+          color: vm.currentThemeMode == ThemeMode.light
+              ? kPrimaryColorLightTheme
+              : kSecondColorDarkTheme,
         ),
         Expanded(
           child: Text(

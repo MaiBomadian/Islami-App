@@ -25,11 +25,9 @@ class _QuranDetailState extends State<QuranDetail> {
     var vm = Provider.of<SettingsProvider>(context);
     var theme = Theme.of(context);
 
-
-
     if (versesList.isEmpty) loadData(arguments.suraNumber);
     return Container(
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
             vm.getBackGround(),
@@ -55,7 +53,9 @@ class _QuranDetailState extends State<QuranDetail> {
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-             color: vm.currentThemeMode == ThemeMode.light ?Colors.white.withOpacity(.8): kPrimaryColorDarkTheme.withOpacity(.8),
+              color: vm.currentThemeMode == ThemeMode.light
+                  ? Colors.white.withOpacity(.8)
+                  : kPrimaryColorDarkTheme.withOpacity(.8),
             ),
             child: Column(
               children: [
@@ -64,20 +64,23 @@ class _QuranDetailState extends State<QuranDetail> {
                   children: [
                     Text(
                       'سورة ${arguments.suraName}',
-                      style: theme.textTheme.titleLarge
-                    ),
+                        style: theme.textTheme.titleLarge),
                     const SizedBox(
                       width: 16,
                     ),
-                     Icon(
+                    Icon(
                       Icons.play_circle_fill_outlined,
                       size: 28,
-                      color: vm.currentThemeMode == ThemeMode.light ?Colors.black: kSecondColorDarkTheme,
+                      color: vm.currentThemeMode == ThemeMode.light
+                          ? Colors.black
+                          : kSecondColorDarkTheme,
                     ),
                   ],
                 ),
-                 Divider(
-                  color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+                Divider(
+                  color: vm.currentThemeMode == ThemeMode.light
+                      ? kPrimaryColorLightTheme
+                      : kSecondColorDarkTheme,
                 ),
                 if (versesList.isEmpty)
                   const Center(
@@ -92,8 +95,7 @@ class _QuranDetailState extends State<QuranDetail> {
                         return Text(
                           '${{index + 1}} ${versesList[index]}',
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.bodySmall
-                        );
+                            style: theme.textTheme.bodySmall);
                       },
                       itemCount: versesList.length,
                     ),

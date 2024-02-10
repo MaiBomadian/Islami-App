@@ -19,7 +19,7 @@ class _HadethScreenState extends State<HadethScreen> {
   @override
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
-    var vm =Provider.of<SettingsProvider>(context);
+    var vm = Provider.of<SettingsProvider>(context);
     if (hadethContentList.isEmpty) loadData();
     return Column(
       children: [
@@ -27,8 +27,10 @@ class _HadethScreenState extends State<HadethScreen> {
           'assets/images/hadeth_logo.png',
           height: mediaQuery.height * .2,
         ),
-         Divider(
-          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+        Divider(
+          color: vm.currentThemeMode == ThemeMode.light
+              ? kPrimaryColorLightTheme
+              : kSecondColorDarkTheme,
           thickness: 1.2,
         ),
         const Text(
@@ -39,8 +41,10 @@ class _HadethScreenState extends State<HadethScreen> {
             fontWeight: FontWeight.w600,
           ),
         ),
-         Divider(
-          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+        Divider(
+          color: vm.currentThemeMode == ThemeMode.light
+              ? kPrimaryColorLightTheme
+              : kSecondColorDarkTheme,
           thickness: 1.2,
         ),
         Expanded(

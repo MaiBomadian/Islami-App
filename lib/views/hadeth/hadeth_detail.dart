@@ -17,9 +17,8 @@ class HadethDetail extends StatelessWidget {
     var vm = Provider.of<SettingsProvider>(context);
     var theme = Theme.of(context);
 
-
     return Container(
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(vm.getBackGround()),
         ),
@@ -39,25 +38,24 @@ class HadethDetail extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           decoration: BoxDecoration(
-            color: vm.currentThemeMode == ThemeMode.light ?Colors.white.withOpacity(.8): kPrimaryColorDarkTheme.withOpacity(.8),
+            color: vm.currentThemeMode == ThemeMode.light
+                ? Colors.white.withOpacity(.8)
+                : kPrimaryColorDarkTheme.withOpacity(.8),
             borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
             children: [
-              Text(
-                arguments.title,
-                style: theme.textTheme.bodyLarge
-              ),
-               Divider(
-                color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
+              Text(arguments.title, style: theme.textTheme.bodyLarge),
+              Divider(
+                color: vm.currentThemeMode == ThemeMode.light
+                    ? kPrimaryColorLightTheme
+                    : kSecondColorDarkTheme,
               ),
               Expanded(
                 child: SingleChildScrollView(
-                  child: Text(
-                    arguments.hadethContent,
-                    textAlign: TextAlign.right,
-                    style: theme.textTheme.bodySmall
-                  ),
+                  child: Text(arguments.hadethContent,
+                      textAlign: TextAlign.right,
+                      style: theme.textTheme.bodySmall),
                 ),
               ),
             ],
