@@ -1,6 +1,9 @@
 import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../config/settings_provider.dart';
 
 class SettingsScreen extends StatelessWidget {
   SettingsScreen({super.key});
@@ -18,6 +21,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var language = AppLocalizations.of(context)!;
+    var vm = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 45),
       child: Scaffold(
@@ -30,8 +34,16 @@ class SettingsScreen extends StatelessWidget {
             height: 10,
           ),
           CustomDropdown<String>(
+            initialItem: vm.currentLanguage == 'en' ?'English' :'عربي',
             items: languages,
-            onChanged: (value) {},
+            onChanged: (value) {
+              if(value =='English'){
+                vm.changeLanguage('en');
+              }
+              else if(value =='عربي'){
+                vm.changeLanguage('ar');
+              }
+            },
           ),
           const SizedBox(
             height: 40,
@@ -52,3 +64,9 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+

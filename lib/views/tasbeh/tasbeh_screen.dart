@@ -13,10 +13,12 @@ class _TasbehScreenState extends State<TasbehScreen> {
     'سبحان الله',
     'الحمدلله',
     'لا اله الا الله',
+    'الله اكبر',
   ];
   double _rotationAngle = 0.0;
   String text = 'سبحان الله';
   int counter = 0;
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +37,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
                   top: 78,
                 ),
                 child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      onMasbahaClicked();
-                      _rotationAngle += 135.0;
-                    });
-                  },
+                  onTap: onMasbahaClicked,
                   child: Transform.rotate(
                     angle: _rotationAngle * (3.1415926535 / 180),
                     child: Image.asset(
@@ -116,15 +113,21 @@ class _TasbehScreenState extends State<TasbehScreen> {
   }
 
   onMasbahaClicked() {
-    if (counter < 10) {
+    setState(() {
+
+    });
+    if (counter == 0 || counter <33) {
+      _rotationAngle += 135;
       counter++;
     } else {
+      if (azkarList.isEmpty) return;
       counter = 0;
-      for (int i = 0; i < azkarList.length; i++) {
-        text = azkarList[i];
-          setState(() {});
-      }
+      currentIndex++;
     }
-    });
-  }
+    if (currentIndex >= azkarList.length) {
+      currentIndex = 0; // Reset to the beginning if at the end
+    }
+    text = azkarList[currentIndex];
+    }
+
 }

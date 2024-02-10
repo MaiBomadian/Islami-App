@@ -17,6 +17,32 @@ class ApplicationTheme {
         fontFamily: 'El Messiri',
       ),
     ),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontFamily: 'El Messiri',
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+        fontSize: 30,
+      ),
+      bodyLarge:  TextStyle(
+        fontFamily: 'El Messiri',
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+        fontSize: 25,
+      ),
+      bodyMedium:  TextStyle(
+        fontFamily: 'El Messiri',
+        fontWeight: FontWeight.normal,
+        color: Colors.black,
+        fontSize: 25,
+      ),
+      bodySmall:  TextStyle(
+        fontFamily: 'El Messiri',
+        fontWeight: FontWeight.normal,
+        color: Colors.black,
+        fontSize: 20,
+      ),
+    ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: kPrimaryColor,
       type: BottomNavigationBarType.fixed,
