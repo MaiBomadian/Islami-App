@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/constants.dart';
+import 'package:provider/provider.dart';
+
+import '../../config/settings_provider.dart';
 
 class RadioScreen extends StatelessWidget {
   const RadioScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var vm = Provider.of<SettingsProvider>(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -27,22 +31,23 @@ class RadioScreen extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        const Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.skip_previous,
-              color: kPrimaryColor,
+              color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
               size: 50,
+
             ),
             Icon(
               Icons.play_arrow,
-              color: kPrimaryColor,
+              color:  vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
               size: 50,
             ),
             Icon(
               Icons.skip_next,
-              color: kPrimaryColor,
+              color:  vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
               size: 50,
             ),
           ],

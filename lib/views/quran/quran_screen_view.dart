@@ -3,6 +3,9 @@ import 'package:islami_app/constants.dart';
 import 'package:islami_app/models/sura_content_model.dart';
 import 'package:islami_app/views/quran/quran_detail.dart';
 import 'package:islami_app/views/quran/quran_list.dart';
+import 'package:provider/provider.dart';
+
+import '../../config/settings_provider.dart';
 
 class QuranScreen extends StatelessWidget {
   final List<String> suraNameList = [
@@ -126,42 +129,47 @@ class QuranScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Size mediaQuery = MediaQuery.of(context).size;
+    var theme = Theme.of(context);
+    var vm = Provider.of<SettingsProvider>(context);
+
+
     return Column(
       children: [
         Image.asset(
           'assets/images/mushaf.png',
           height: mediaQuery.height * .2,
         ),
-        const Divider(
-          color: kPrimaryColor,
+         Divider(
+          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
           thickness: 2,
         ),
         Row(
           children: [
-            const Expanded(
+             Expanded(
               child: Text(
                 'رقم السورة',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 25, fontFamily: 'El Messiri'),
+                style: theme.textTheme.bodyLarge,
               ),
             ),
             Container(
               height: 35,
               width: 2,
-              color: kPrimaryColor,
+              color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
             ),
-            const Expanded(
+             Expanded(
               child: Text(
                 'اسم السورة',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 25, fontFamily: 'El Messiri'),
+                style: theme.textTheme.bodyLarge,
               ),
             ),
           ],
         ),
-        const Divider(
-          color: kPrimaryColor,
+         Divider(
+          color: vm.currentThemeMode == ThemeMode.light ?kPrimaryColorLightTheme: kSecondColorDarkTheme,
           thickness: 2,
         ),
         Expanded(

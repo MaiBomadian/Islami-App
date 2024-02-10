@@ -1,6 +1,7 @@
 import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/constants.dart';
 import 'package:provider/provider.dart';
 
 import '../../config/settings_provider.dart';
@@ -34,13 +35,16 @@ class SettingsScreen extends StatelessWidget {
             height: 10,
           ),
           CustomDropdown<String>(
-            initialItem: vm.currentLanguage == 'en' ?'English' :'عربي',
+            decoration: CustomDropdownDecoration(
+                closedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white,
+                expandedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white
+            ),
+            initialItem: vm.currentLanguage == 'en' ? 'English' : 'عربي',
             items: languages,
             onChanged: (value) {
-              if(value =='English'){
+              if (value == 'English') {
                 vm.changeLanguage('en');
-              }
-              else if(value =='عربي'){
+              } else if (value == 'عربي') {
                 vm.changeLanguage('ar');
               }
             },
@@ -56,17 +60,24 @@ class SettingsScreen extends StatelessWidget {
             height: 10,
           ),
           CustomDropdown<String>(
+            decoration: CustomDropdownDecoration(
+                closedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white,
+                expandedFillColor: vm.currentThemeMode == ThemeMode.dark ?kPrimaryColorDarkTheme :Colors.white
+            ),
+            initialItem: vm.currentThemeMode == ThemeMode.light? 'Light': 'Dark',
             items: themeLits,
-            onChanged: (value) {},
+            onChanged: (value) {
+              if(value == 'Light'){
+                vm.changeTheme(ThemeMode.light);
+              }
+              else if (value == 'Dark'){
+                vm.changeTheme(ThemeMode.dark);
+
+              }
+            },
           )
         ]),
       ),
     );
   }
 }
-
-
-
-
-
-
