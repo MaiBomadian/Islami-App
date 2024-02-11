@@ -29,13 +29,19 @@ class SettingsScreen extends StatelessWidget {
         body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Text(
             language.language,
-            style: theme.textTheme.bodyLarge,
+            style: theme.textTheme.titleMedium,
           ),
           const SizedBox(
             height: 10,
           ),
           CustomDropdown<String>(
             decoration: CustomDropdownDecoration(
+                closedSuffixIcon: Icon(
+                  Icons.arrow_drop_down,
+                  color: vm.currentThemeMode == ThemeMode.light
+                      ? Colors.white
+                      : kSecondColorDarkTheme,
+                ),
                 closedFillColor: vm.currentThemeMode == ThemeMode.dark
                     ? kPrimaryColorDarkTheme
                     : Colors.white,
@@ -57,13 +63,19 @@ class SettingsScreen extends StatelessWidget {
           ),
           Text(
             language.theme,
-            style: theme.textTheme.bodyLarge,
+            style: theme.textTheme.titleMedium,
           ),
           const SizedBox(
             height: 10,
           ),
           CustomDropdown<String>(
             decoration: CustomDropdownDecoration(
+                closedSuffixIcon: Icon(
+                  Icons.arrow_drop_down,
+                  color: vm.currentThemeMode == ThemeMode.light
+                      ? Colors.black
+                      : kSecondColorDarkTheme,
+                ),
                 closedFillColor: vm.currentThemeMode == ThemeMode.dark
                     ? kPrimaryColorDarkTheme
                     : Colors.white,

@@ -29,7 +29,7 @@ class _SpalshScreenState extends State<SpalshScreen> {
   @override
   Widget build(BuildContext context) {
     Size mediaQuery = MediaQuery.of(context).size;
-    var vm = Provider.of<SettingsProvider>(context)!;
+    var vm = Provider.of<SettingsProvider>(context);
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Image.asset(

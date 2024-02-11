@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/constants.dart';
 import 'package:islami_app/models/sura_content_model.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ class _QuranDetailState extends State<QuranDetail> {
     Size mediaQuery = MediaQuery.of(context).size;
     var vm = Provider.of<SettingsProvider>(context);
     var theme = Theme.of(context);
+    var language = AppLocalizations.of(context)!;
 
     if (versesList.isEmpty) loadData(arguments.suraNumber);
     return Container(
@@ -37,8 +39,8 @@ class _QuranDetailState extends State<QuranDetail> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'إسلامي',
+          title: Text(
+            language.islami,
           ),
         ),
         body: Container(
@@ -62,8 +64,7 @@ class _QuranDetailState extends State<QuranDetail> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'سورة ${arguments.suraName}',
+                    Text('سورة ${arguments.suraName}',
                         style: theme.textTheme.titleLarge),
                     const SizedBox(
                       width: 16,
@@ -92,9 +93,8 @@ class _QuranDetailState extends State<QuranDetail> {
                   Expanded(
                     child: ListView.builder(
                       itemBuilder: (context, index) {
-                        return Text(
-                          '${{index + 1}} ${versesList[index]}',
-                          textAlign: TextAlign.center,
+                        return Text('${{index + 1}} ${versesList[index]}',
+                            textAlign: TextAlign.center,
                             style: theme.textTheme.bodySmall);
                       },
                       itemCount: versesList.length,

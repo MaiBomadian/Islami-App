@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/constants.dart';
 import 'package:islami_app/models/hadeth_content_model.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,7 @@ class HadethDetail extends StatelessWidget {
     var arguments = ModalRoute.of(context)?.settings.arguments as HadethModel;
     Size mediaQuery = MediaQuery.of(context).size;
     var vm = Provider.of<SettingsProvider>(context);
+    var language = AppLocalizations.of(context)!;
     var theme = Theme.of(context);
 
     return Container(
@@ -25,7 +27,7 @@ class HadethDetail extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('إسلامي'),
+          title: Text(language.islami),
         ),
         body: Container(
           height: mediaQuery.height,

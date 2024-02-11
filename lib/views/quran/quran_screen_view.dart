@@ -151,7 +151,7 @@ class QuranScreen extends StatelessWidget {
               child: Text(
                 'رقم السورة',
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge,
+                style: theme.textTheme.titleMedium,
               ),
             ),
             Container(
@@ -165,7 +165,7 @@ class QuranScreen extends StatelessWidget {
               child: Text(
                 'اسم السورة',
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge,
+                style: theme.textTheme.titleMedium,
               ),
             ),
           ],

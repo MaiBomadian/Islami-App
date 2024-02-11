@@ -24,6 +24,12 @@ class ApplicationTheme {
         color: Colors.black,
         fontSize: 30,
       ),
+      titleMedium: TextStyle(
+        fontFamily: 'El Messiri',
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+        fontSize: 25,
+      ),
       bodyLarge: TextStyle(
         fontFamily: 'El Messiri',
         fontWeight: FontWeight.w500,
@@ -87,6 +93,12 @@ class ApplicationTheme {
         fontWeight: FontWeight.w500,
         color: kSecondColorDarkTheme,
         fontSize: 30,
+      ),
+      titleMedium: TextStyle(
+        fontFamily: 'El Messiri',
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+        fontSize: 25,
       ),
       bodyLarge: TextStyle(
         fontFamily: 'El Messiri',
