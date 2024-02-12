@@ -39,7 +39,7 @@ class SettingsScreen extends StatelessWidget {
                 closedSuffixIcon: Icon(
                   Icons.arrow_drop_down,
                   color: vm.currentThemeMode == ThemeMode.light
-                      ? Colors.white
+                      ? Colors.black
                       : kSecondColorDarkTheme,
                 ),
                 closedFillColor: vm.currentThemeMode == ThemeMode.dark
