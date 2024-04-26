@@ -10,7 +10,9 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => SettingsProvider(),
+    create: (context) => SettingsProvider()
+      ..getLanguage()
+      ..getTheme(),
     child: const MyApp(),
   ));
 }

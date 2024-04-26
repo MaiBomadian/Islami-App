@@ -13,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
     'English',
     'عربي',
   ];
-  final List<String> themeLits = [
+  final List<String> themeList = [
     'Light',
     'Dark',
   ];
@@ -84,7 +84,7 @@ class SettingsScreen extends StatelessWidget {
                     : Colors.white),
             initialItem:
                 vm.currentThemeMode == ThemeMode.light ? 'Light' : 'Dark',
-            items: themeLits,
+            items: themeList,
             onChanged: (value) {
               if (value == 'Light') {
                 vm.changeTheme(ThemeMode.light);
