@@ -39,6 +39,7 @@ class SettingsProvider extends ChangeNotifier {
       } else {
         currentThemeMode = ThemeMode.light;
       }
+      notifyListeners();
     }
   }
 
@@ -46,9 +47,5 @@ class SettingsProvider extends ChangeNotifier {
     return currentThemeMode == ThemeMode.light
         ? 'assets/images/main_background.png'
         : 'assets/images/bg.png';
-  }
-
-  bool dark() {
-    return currentThemeMode == ThemeMode.dark;
   }
 }
